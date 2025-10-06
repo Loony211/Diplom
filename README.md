@@ -12,7 +12,9 @@
   - Создается на python и java.script
   - Будет внедрена база данных, сделанная через my.sql
 
-    
+  <a href="">
+    <img src="https://img.shields.io/badge/google drive-black?style=for-the-badge&logo=google drive&logoColor=white"/>
+  </a>
   <h2>Структура приложения</h2>
   <h2>Варианты использования Use Case</h2>
   <h2>База данных</h2>
