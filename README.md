@@ -1,8 +1,9 @@
 <div id="header" align="center">
   <img src="https://i.pinimg.com/originals/82/80/90/828090b1ab47359f9111006d30d566e3.gif" width="300"/>
 </div>
-<h1>DIPOM</h1>
 <div id="badges" align="center">
+<h1>DIPOM</h1>
+</div>
 
   
 ---
