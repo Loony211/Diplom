@@ -12,13 +12,16 @@
   - Создается на python и java.script
   - Будет внедрена база данных, сделанная через my.sql
 
-  <a href="">
-    <img src="https://img.shields.io/badge/google drive-black?style=for-the-badge&logo=google drive&logoColor=white"/>
+  <a href="https://drive.google.com/file/d/1RbR9mKTtYo_O6Yh11mSzqcYIQt0QJEcI/view?usp=drive_link">
+    <img src="https://img.shields.io/badge/Структура приложения-black?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
   </a>
-  <h2>Структура приложения</h2>
-  <h2>Варианты использования Use Case</h2>
-  <h2>База данных</h2>
-  <h2>ссылка на таблицы</h2>
+   <a href="https://drive.google.com/file/d/1RbR9mKTtYo_O6Yh11mSzqcYIQt0QJEcI/view?usp=drive_link">
+    <img src="https://img.shields.io/badge/Варианты использования Use Case-black?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
+  </a>
+     <a href="https://docs.google.com/spreadsheets/d/1ER0RY8g8Ei5lKAU_kTm3HxB110WWoynb/edit?usp=drive_link&ouid=101743919987561321728&rtpof=true&sd=true">
+    <img src="https://img.shields.io/badge/Таблицы-black?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
+  </a>
+
 
 
   
