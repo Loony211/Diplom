@@ -2,7 +2,9 @@
   <img src="https://i.pinimg.com/originals/82/80/90/828090b1ab47359f9111006d30d566e3.gif" width="300"/>
 </div>
 <div id="badges" align="center">
-<h1>DIPOM</h1>
+<h1>DIPLOM</h1>
+  <h2>Telegram-Бот для Индивидуального Планирования Рациона Питания</h2>
+  
 </div>
 
   
