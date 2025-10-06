@@ -3,10 +3,10 @@
 </div>
 <div id="badges" align="center">
 <h1>DIPLOM</h1>
-</div>
-
-
   - Telegram-Бот для Индивидуального Планирования Рациона Питания
+  </div>
+
+  
   - Telegram-Бот
   - Создается для себя с целью получения прибыли
   - Создается на python и java.script
