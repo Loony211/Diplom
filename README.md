@@ -24,7 +24,7 @@
   
 ---
 <h1>Мой не сам</h1>
-  <a href="https://drive.google.com/file/d/1RbR9mKTtYo_O6Yh11mSzqcYIQt0QJEcI/view?usp=drive_link">
+  <a href="https://github.com/Loony211/demoexz/tree/main/moy_ne_sam">
     <img src="https://img.shields.io/badge/Github-purple?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
   </a>
   
@@ -42,7 +42,10 @@
   - Есть стили
 ---
 <h1>Нарушениям Нет</h1>
-
+  <a href="https://github.com/Loony211/demoexz/tree/main/naru_net">
+    <img src="https://img.shields.io/badge/Github-purple?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
+  </a>
+  
 - Задание ссылка на документ
   - Выделены таблицы
   - Выделены данные в таблицах
