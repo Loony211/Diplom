@@ -13,7 +13,7 @@
   - Будет внедрена база данных, сделанная через my.sql
 
    <a href="https://drive.google.com/file/d/1RbR9mKTtYo_O6Yh11mSzqcYIQt0QJEcI/view?usp=drive_link">
-    <img src="https://img.shields.io/badge/Структура приложения/Варианты использования Use Case-purple?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
+    <img src="https://img.shields.io/badge/Структура приложения / Варианты использования Use Case-purple?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
   </a>
 
   
