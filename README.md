@@ -20,4 +20,9 @@
   </a>
   
 ---
+
 <img src="https://github.com/Loony211/Diplom/blob/main/struktura.png?raw=true" width="1000" height="400"/>&nbsp;
+
+---
+
+<img src="https://github.com/Loony211/Diplom/blob/main/struktura.png?raw=true](https://github.com/Loony211/Diplom/blob/main/UseCase.png?raw=true" width="1000" height="400"/>&nbsp;
