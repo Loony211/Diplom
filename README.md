@@ -20,9 +20,11 @@
   </a>
   
 ---
+  <h1>Структура телеграм бота</h1>
 
 <img src="https://github.com/Loony211/Diplom/blob/main/struktura.png?raw=true" width="1000" height="400"/>&nbsp;
 
 ---
-
+  <h1>UseCase-диаграмма</h1>
+  
 <img src="https://github.com/Loony211/Diplom/blob/main/UseCase.png?raw=true" width="1000" height="600"/>&nbsp;
