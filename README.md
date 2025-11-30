@@ -20,6 +20,8 @@
    <a href="https://docs.google.com/spreadsheets/d/13r-G5v1sOiqOkxHiPEMOT4499g78YemvSfyKOhqcv2k/edit?usp=sharing">
     <img src="https://img.shields.io/badge/Таблицы-green?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
   </a>
+
+  
 ---
   <h1>ER-диаграмма</h1>
 
