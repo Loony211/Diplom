@@ -23,7 +23,7 @@
 
 ---
 Telegram-Bot
- <img src="" width="400" height="400"/>&nbsp;
+ <img src="https://github.com/Loony211/Diplom/blob/main/photo_2025-11-30_23-33-32.jpg?raw=true" width="400" height="400"/>&nbsp;
  
   <a href="">
     <img src="https://img.shields.io/badge/FitoPro-white?style=for-the-badge&logo=pen&logoColor=green" alt="Badge"/>
