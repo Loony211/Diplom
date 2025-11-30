@@ -21,7 +21,14 @@
     <img src="https://img.shields.io/badge/Таблицы-green?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
   </a>
 
-  
+---
+Telegram-Bot
+ <img src="" width="400" height="400"/>&nbsp;
+ 
+  <a href="">
+    <img src="https://img.shields.io/badge/FitoPro-white?style=for-the-badge&logo=pen&logoColor=green" alt="Badge"/>
+  </a>
+ 
 ---
   <h1>ER-диаграмма</h1>
 
