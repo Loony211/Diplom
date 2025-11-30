@@ -35,7 +35,7 @@
 ---
   <h1>UseCase-диаграмма</h1>
   
-<img src="https://github.com/Loony211/Diplom/blob/main/UseCase.png?raw=true" width="1000" height="600"/>&nbsp;
+<img src="https://github.com/Loony211/Diplom/blob/main/usecase.jpg?raw=true" width="1000" height="600"/>&nbsp;
 ---
   <h1>База данных</h1>
   
