@@ -35,7 +35,7 @@
 ---
   <h1>ER-диаграмма</h1>
 
-<img src="https://github.com/Loony211/Diplom/blob/main/photo_2025-11-30_23-13-02.jpg?raw=true" width="1000" height="400"/>&nbsp;
+<img src="https://github.com/Loony211/Diplom/blob/main/photo_2026-03-10_22-54-58.jpg?raw=true" width="1000" height="400"/>&nbsp;
   
 ---
   <h1>Структура телеграм бота</h1>
