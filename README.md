@@ -49,5 +49,5 @@
 ---
   <h1>База данных</h1>
   
-<img src="https://github.com/Loony211/Diplom/blob/main/%D0%B1%D0%B4.jpg?raw=true" width="1000" height="600"/>&nbsp;
+<img src="https://github.com/Loony211/Diplom/blob/main/%D0%91%D0%94.jpg?raw=true" width="1000" height="600"/>&nbsp;
 <img src="https://github.com/Loony211/Diplom/blob/main/%D0%B1%D0%B4%D0%B4.jpg?raw=true" width="1000" height="600"/>&nbsp;
