@@ -33,7 +33,7 @@
 ---
   <h1>ER-диаграмма</h1>
 
-<img src="https://github.com/Loony211/Diplom/blob/main/photo_2026-03-10_22-54-58.jpg?raw=true" width="1000" height="800"/>&nbsp;
+<img src="https://github.com/Loony211/Diplom/blob/main/%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0.jpg?raw=true" width="1000" height="800"/>&nbsp;
   
 ---
   <h1>Структура телеграм бота</h1>
@@ -43,7 +43,7 @@
 ---
   <h1>UseCase-диаграмма</h1>
   
-<img src="https://github.com/Loony211/Diplom/blob/main/usecase.jpg?raw=true" width="1000" height="600"/>&nbsp;
+<img src="https://github.com/Loony211/Diplom/blob/main/%D1%8E%D0%B7%20%D0%BA%D0%B5%D0%B9%D1%81.jpg?raw=true" width="1000" height="400"/>&nbsp;
 ---
   <h1>База данных</h1>
   
