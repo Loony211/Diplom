@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>FitoPro — Персональный ИИ-диетолог в Telegram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a2c2c;
+            line-height: 1.4;
+            min-height: 100vh;
+            background: #e8f0ec;
+        }
+
+        /* ========== ФОНОВОЕ ИЗОБРАЖЕНИЕ ========== */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('fitopro-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 1;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Контент поверх фона — БЕЗ БЕЛОЙ ПОДЛОЖКИ */
+        .header,
+        .hero,
+        .steps-with-screenshots,
+        .motivation,
+        .pricing,
+        .footer {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Только лёгкий полупрозрачный фон для читаемости текста */
+        .hero {
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(224, 237, 232, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            background: #1e5a43;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e5a43, #3b8b6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1.5px solid #2e7d5e;
+            color: #2e7d5e;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #2e7d5e;
+            color: white;
+        }
+
+        .hero {
+            padding: 60px 0 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .problem-badge {
+            background: rgba(254, 226, 226, 0.9);
+            color: #c2410c;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 24px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #0a1f1f;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #2e7d5e, #5bb98c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: #1a3a3a;
+            margin-bottom: 32px;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2e7d5e, #3b9b7a);
+            color: white;
+            padding: 16px 42px;
+            border-radius: 60px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 16px;
+            box-shadow: 0 12px 20px -10px #2e7d5e;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 28px -12px #2e7d5e;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.85);
+            color: #1a2c2c;
+            padding: 16px 32px;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            border: 1px solid #cbdcd4;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            border-color: #2e7d5e;
+            color: #2e7d5e;
+        }
+
+        .visual-metafora {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 48px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 30px 35px -20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .visual-img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 24px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .visual-text {
+            font-size: 15px;
+            color: #2a5e4c;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px 20px;
+            border-radius: 60px;
+            font-weight: 500;
+            width: fit-content;
+            margin: 20px auto 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .steps-with-screenshots {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0a1f1f;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.4);
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #2a4a4a;
+            margin-bottom: 48px;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .steps-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 32px;
+            padding: 28px 24px 30px;
+            border: 1px solid rgba(255,255,255,0.6);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.08);
+        }
+
+        .step-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #bdd9ce;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+        }
+
+        .step-number {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #2e7d5e, #3b9b7a);
+            color: white;
+            font-size: 26px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .step-item h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .step-item p {
+            color: #2a4a4a;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .step-screenshot {
+            margin-top: 20px;
+            background: white;
+            border-radius: 24px;
+            padding: 12px;
+            box-shadow: 0 12px 20px -10px rgba(0,0,0,0.1);
+            display: inline-block;
+            width: 100%;
+            max-width: 260px;
+        }
+
+        .step-screenshot img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            display: block;
+        }
+
+        .motivation {
+            padding: 40px 0 30px;
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .motivation-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .motivation-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.75);
+            padding: 28px 20px;
+            border-radius: 32px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.6);
+            transition: 0.2s;
+            backdrop-filter: blur(8px);
+        }
+
+        .motivation-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #bdd9ce;
+        }
+
+        .motivation-card .emoji {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .motivation-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .motivation-card p {
+            color: #2a4a4a;
+            font-size: 14px;
+        }
+
+        .pricing {
+            padding: 50px 0 70px;
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 36px;
+            padding: 32px 28px;
+            width: 260px;
+            text-align: center;
+            box-shadow: 0 12px 25px -12px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+
+        .price-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .price-card.popular {
+            border: 2px solid #2e7d5e;
+            position: relative;
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .badge-popular {
+            background: #2e7d5e;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 16px;
+            border-radius: 40px;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .price-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .price-value {
+            font-size: 44px;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .price-features li {
+            margin: 12px 0;
+            font-size: 14px;
+        }
+
+        .btn-price {
+            background: rgba(238, 243, 240, 0.9);
+            padding: 12px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            color: #1a2c2c;
+            transition: 0.2s;
+        }
+
+        .btn-price:hover {
+            background: #2e7d5e;
+            color: white;
+        }
+
+        .price-card.popular .btn-price {
+            background: #2e7d5e;
+            color: white;
+        }
+
+        .price-card.popular .btn-price:hover {
+            background: #1e5a43;
+            transform: scale(1.02);
+        }
+
+        .footer {
+            background: rgba(26, 44, 44, 0.9);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            font-size: 14px;
+            backdrop-filter: blur(8px);
+        }
+
+        .footer a {
+            color: #b4cfc2;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero h1 {
+                font-size: 42px;
+            }
+            .steps-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .step-item {
+                max-width: 360px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <div class="logo-img">🥑</div>
+            <span class="logo-text">FitoPro</span>
+        </div>
+        <a href="https://t.me/FitoPRObot" class="btn-outline" target="_blank">Telegram бот</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <div class="problem-badge">🚨 Проблема миллиона людей</div>
+            <h1>Считать калории — <span>мука?</span><br>FitoPro сделает это за тебя</h1>
+            <p class="hero-desc">Забудь про таблицы, калькуляторы и голодные вечера. Telegram-бот на основе ИИ составит рацион под твои цели: похудеть, набрать массу или просто питаться сбалансированно.</p>
+            <div class="cta-buttons">
+                <a href="https://t.me/FitoPRObot" class="btn-primary" target="_blank">🔥 Попробовать бесплатно →</a>
+                <a href="#how" class="btn-secondary">Как это работает</a>
+            </div>
+        </div>
+
+        <div class="visual-metafora">
+            <img src="fito.png" alt="От отчаяния к решению: FitoPro бот помогает с питанием" class="visual-img">
+            <div class="visual-text">✅ Больше никаких мучений с подсчётами. FitoPro — твой личный диетолог 24/7</div>
+        </div>
+    </div>
+</section>
+
+<section id="how" class="steps-with-screenshots">
+    <div class="container">
+        <h2 class="section-title">Как это работает</h2>
+        <p class="section-sub">Три простых шага — и ты на пути к здоровому питанию</p>
+        
+        <div class="steps-grid">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <h3>📝 Заполни профиль</h3>
+                <p>Укажи возраст, рост, вес — бот рассчитает ИМТ и даст рекомендации</p>
+                <div class="step-screenshot">
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <h3>⚡ Получи пробный рацион</h3>
+                <p>Бесплатно! ИИ GigaChat составит меню на день под твою цель</p>
+                <div class="step-screenshot">
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <h3>🚀 Достигай цели с подпиской</h3>
+                <p>Неделя (200₽) или месяц (350₽) — полный доступ ко всем функциям</p>
+                <div class="step-screenshot">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="motivation">
+    <div class="container motivation-grid">
+        <div class="motivation-card">
+            <div class="emoji">🧠</div>
+            <h3>ИИ диетолог GigaChat</h3>
+            <p>План питания, как у профессионала, с бесплатным пробным днём.</p>
+        </div>
+        <div class="motivation-card">
+            <div class="emoji">📲</div>
+            <h3>Уже в Telegram</h3>
+            <p>Никаких новых приложений. Просто открывай и пользуйся.</p>
+        </div>
+        <div class="motivation-card">
+            <div class="emoji">🎯</div>
+            <h3>Персональный подход</h3>
+            <p>Похудение, поддержание или набор массы — бот подстроится под тебя.</p>
+        </div>
+    </div>
+</section>
+
+<section class="pricing">
+    <div class="container">
+        <h2 class="section-title">Старт — бесплатно</h2>
+        <p class="section-sub">Выбери удобный формат</p>
+        <div class="pricing-cards">
+            <div class="price-card">
+                <div class="price-name">Пробный день</div>
+                <div class="price-value">0 ₽</div>
+                <ul class="price-features">
+                    <li>✅ Персональный рацион на 1 день</li>
+                    <li>✅ Расчёт ИМТ и рекомендации</li>
+                </ul>
+                <a href="https://t.me/FitoPRObot" class="btn-price" target="_blank">Попробовать</a>
+            </div>
+            <div class="price-card popular">
+                <div class="badge-popular">⭐ Выбор большинства</div>
+                <div class="price-name">Неделя</div>
+                <div class="price-value">200 ₽</div>
+                <ul class="price-features">
+                    <li>✅ Меню на 7 дней</li>
+                    <li>✅ БЖУ под твою цель</li>
+                    <li>✅ Статистика прогресса</li>
+                </ul>
+                <a href="https://t.me/FitoPRObot" class="btn-price" target="_blank">Оформить</a>
+            </div>
+            <div class="price-card">
+                <div class="price-name">Месяц</div>
+                <div class="price-value">350 ₽</div>
+                <ul class="price-features">
+                    <li>✅ Рацион на 30 дней</li>
+                    <li>✅ Полный доступ к ИИ</li>
+                    <li>✅ Приоритетная поддержка</li>
+                </ul>
+                <a href="https://t.me/FitoPRObot" class="btn-price" target="_blank">Выбрать</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p style="margin-bottom: 12px;">© 2026 FitoPro — твой персональный ИИ-диетолог в Telegram</p>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <a href="https://t.me/FitoPRObot" style="color: #b4cfc2; text-decoration: none;">Telegram</a>
+            <a href="#" style="color: #b4cfc2; text-decoration: none;">Политика конфиденциальности</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0px)';
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.motivation-card, .price-card, .step-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = '0.4s ease-out';
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>
