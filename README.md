@@ -38,7 +38,7 @@
 ---
   <h1>Структура телеграм бота</h1>
 
-<img src="https://github.com/Loony211/Diplom/blob/main/%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0...jpg?raw=true" width="1000" height="400"/>&nbsp;
+<img src="https://github.com/Loony211/Diplom/blob/main/%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0...jpg?raw=true" width="1000" height="600"/>&nbsp;
 
 ---
   <h1>UseCase-диаграмма</h1>
