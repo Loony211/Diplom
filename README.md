@@ -12,12 +12,10 @@
   - Создается на python
   - Будет внедрена база данных, сделанная через SQLite
 
-   <a href="https://drive.google.com/file/d/1RbR9mKTtYo_O6Yh11mSzqcYIQt0QJEcI/view?usp=drive_link">
-    <img src="https://img.shields.io/badge/Структура приложения / Варианты использования Use Case-purple?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
-  </a>
+
   
-   <a href="https://docs.google.com/spreadsheets/d/13r-G5v1sOiqOkxHiPEMOT4499g78YemvSfyKOhqcv2k/edit?usp=sharing">
-    <img src="https://img.shields.io/badge/Таблицы-green?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
+   <a href="http://fitoprobot.online/">
+    <img src="https://img.shields.io/badge/Рекламный сайт-green?style=for-the-badge&logo=pen&logoColor=white" alt="Badge"/>
   </a>
   
   <a href="https://t.me/FitoPRObot">
